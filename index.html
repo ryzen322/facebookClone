@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>Facebook Clone</title>
+  </head>
+  <body class="container">
+    <header class="header">
+      <div class="header__search">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/800px-Facebook_logo_%28square%29.png"
+          alt="Logo"
+          class="header__search--logo"
+        />
+        <div class="header__search--icons">
+          <img src="./icons/search.png" alt="" />
+          <input type="search" placeholder="Search Facebook" />
+        </div>
+      </div>
+      <nav class="header__nav">
+        <div class="header__nav--icons">
+          <img src="/icons/home.png" alt="Home" class="header__img--nav" />
+        </div>
+        <div class="header__nav--icons">
+          <img src="/icons/play-alt.png" alt="Home" class="header__img--nav" />
+        </div>
+        <div class="header__nav--icons">
+          <img src="/icons/shop.png" alt="Home" class="header__img--nav" />
+        </div>
+        <div class="header__nav--icons">
+          <img src="/icons/users-alt.png" alt="Home" class="header__img--nav" />
+        </div>
+        <div class="header__nav--icons">
+          <img src="/icons/gamepad.png" alt="Home" class="header__img--nav" />
+        </div>
+        <div class="header__nav--icons">
+          <img src="/icons/gamepad.png" alt="Home" class="header__img--nav" />
+        </div>
+      </nav>
+      <div class="header__profile">
+        <div class="header__profile--icons">
+          <img src="/icons/plus.png" alt="" />
+        </div>
+        <div class="header__profile--icons">
+          <img src="/icons/envelope.png" alt="" />
+        </div>
+        <div class="header__profile--icons">
+          <img src="/icons/bell.png" alt="" />
+        </div>
+        <div class="header__profile--icons">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAk1BMVEXMAAH////JAADNAAD//v/gcnLz0dH87u7++vr76en54+P87Ov+9/fSJif21tX98fHol5jqoaHhfHzusbHqnZzutrXsq6vkgoLYSEjebGz53d30yMnRGhr1y8zbV1bji4vUOzvOERHli4vSLS3XQULZX1/TSEjeZ2jxwL7YUFDieHnTLCvZWFnqpaXUIyLsrqzSNDRKDV+8AAAIgklEQVR4nO2dC5OyLBTHXcgyM7OLWVqWXbbLtr19/0/3ipl5AfQpiZXhN8/M7uyonD8gnMMBH0WRSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQiQcDCL03jbjggw9m+t7gLgP3b92l/cJzJdGq3n9jT8cRxDvvT97YPlaaJjYxdzObW+OiZncEXlZbRMz17bM1ni+jWROif67eRQagpridneHQ1ui4smnscOqfro0H/msTQqsXpbHldo/WCuBRG17POp8Xf6reRuF+3m/S8zI+qZC7vutNIJlddMOpHQFmcLE9/r90I6J7lX/m1JQRoSPF/lwYTdQ+M5a+vcBEJAPxeea8MKP+O5q1mkcrPDT4A9OdjPZb35shCIfVkTR/P+59qSqCsz8su0aSs4EFHd822bVuWtVHTbMK/2HbbdfWOUXgGnu5SXSuRSJZtCUBQpW9qg545tkZzf/3zdNpy3tvDk/lZ+/PRamz2BhWe660Cli0ZzgqbdqkRoTR1DcscMfj8AeJKgGvVGpulMtubKyOR4Dr3CuNmuk+19ON0vk05mTCthagUKvE/5d6yP/Pfo059uQ1PrV8kgBe7Rym0Y07nu+CluatwS/iUYDafmp18FabLsy/FG98AKiuTps7ab5WMK3mPK4L+dvbt96mW9P3v2bYfwHwwFf6+3Vt3lXjMTZ0DDoydlmKN6sP5NTNVIUMD3/m1l2ZPQ9ebNEMgqrmW1jGX9q/jB1mZyI+fDzH+UquFLNFrHVJHuFrUPOuaNSjYqatx3qQjuRGBna+w/1ZoSngGF0ilhR+9nToFKkGhJjvH9OseijupQ7OLdeEmYY/F1jcY4i43uuZQPQXPngGUq3os9NfuolaFwMrK89RtIi/0cE6r5aMKcEPDAd+KYI4TGD9GX678fqqMreplRQ5rHk3hIDHeWJ77jwoOf+4mR9ooG90xw1kDZmVOe+84eXoxYUWe025+UK9ABaziB3ctJC9+R4LRuFJoge1RV7zrl68d+5y4MaHIyeMmq/ZZH3ai4nwlKW3mVI+clpgnLqvebCxH67vIcFJRLjYqtVO/bwo2X7p1i3tn6H1vyv2rNON8lYPxv9xutJ1YZFi1N0v/2jBw3BaH4FHEQi36b2U4IF3rMKywfyT01R7LGiA41DuQ3m1SHm/fblyyQoih9aX5qVqH4PJK8DwY7x4zJZsAKhrQzhT/jSpxcAPJc8Bt8GLkbJ4DpsH+eti9m/sKbjK+w4X70hMiusM1M31AfW/FInHfwPGt54QeBLNGfKPqEat4oLDKL6XhspIXcntz6fCMKh+c33uIcWOoEPjUIbC0ExunMIj336smw2cwFaYkqliJD2la13Xb7fF0OnQcZ+QVL+z+gD7GWbNHjjMZ/4cScK7eS7IChRoL/6DNGa8pEuMBTbedw2yrwOdqGu7SpYJby7o8b4LB9vuwOeqkzsJaYChxjyu7Z+3Syb8oHgQ+zkKctzDIvVnoSTMLd6W2/8CqMNgVih6MsEtQuP6IxcXHxw4qKNNTO9gwrHZAPzedmVdCudXcn9aXh5nfUCfo5x7g9cEncheoiEmmBUixaOWJfYKrISQxu3hiKZ9LzoDTc+7XZsTLVgUteObEcmbPl949fTTHBpTEL7HJBe8rKvwml5N0A+vjmX3Qj1cCL+SSd9VCpE6fXMolrkbSq84OGM57PlqH0CmxaHENEgtuiePBAj1i6XNKdQNw8bQ27QqMV4OB0s+V0EE4+rWmKP6BaDVxplJKr7gWs6IEQ0D9zBRIgVY+cCoppLjSEPJqv2qAXSWFda/tfhJYRWCPt5VvUWUw9Xgb+Rb57BmO3z/9ppUAJuUCv5xGK6Tkzx60dk1WqNzK/TaDt41vUp4A0BvdhAooW2Ft0X22vw/4LW1DFnmyD1LBb2O/eMaW0iBY2/E28U229KGmVfemkc8Dy/w2s+GdVAFl2zULCf6mUeq3jRqvsMxv+8QyPVtOdIH5lEXjgGXJC+KCeXOA9KHGa3wnLUteTAVQSN/8dOBtXw1g86QJTffZEFva/gWj6T4bAtD215q8rasF2lDT8PD3DphSFGKzv00DYE8yxLDd/fMpiMmLcAgSYaAJISs0hGhCBRCC4LAJl4IoJOdJ6z4VwglA3nRS79ElfpCDYJ+3aTWxJm0o7Vx5m1YTkBQENzxl8QSQdvBRTiY2C2Lyov7TWZwg+m3EHXsNAz42pxX47G5DltzwyQvalriGAfF5UpYnQz4MwB+mFCL8vUM4BtTw7G8GvN8mis+GmOE2nTQ++5vmiltvc//eN9neALdZuNk79nIUvn+BECBl8QSbvBixOwn6eQAuT7oWqQ2VAKOQt001U/RMXaGaEJe8EMhnQ2CCYGHC3zuY89tN37GXZ53327Qf3ibVDMwPNQPeFtUMLCQv2oJ10mKetNGnLHAUNguPeFtUO4ecwj1vg+oG7LLJi8bv2CuS2yxc70cP/wS55IVwQ2nBb5vwtqd+cn6bytseBqR28LVESlk82XZSCrvkjww0l8xm4bZ4Q2n4IqZXFIXJ/qbJJC9WQipMH/K6iKhQuaU2C4vnsyGCZxDca/4pCwwglbwQKmXxJLWDT6iURUL6s7ON/sgAmVTygvzxrGYDk+/LiejRIMBjMO2J2UmjPOm9DQVLWaR4nJi1eBvCiiQIpn09q9nEm06E2maSJd4s3OVtBzviL52Ilv1Ngfy2lgAfGSATJy9E2rGX5x4EN/8jA0TAGnk1gzVvO1iChhqdtxFMQSuK1O+BNp3oP3gS5MAaHqCGCs+8rWDKd6jwxNsIpmwHX4MtbyPY0hZ7oImCYCFTFgkQWGJ8ZIAM2JP+Iz1hWHyJmBvN0OFtAHM2vA1gDFTWvE2QSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQikbzO/94mbCd4FE4sAAAAAElFTkSuQmCC"
+            alt=""
+          />
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="sidebar">
+        <div class="sidebar__border">
+          <div class="sidebar__info">
+            <img src="/icons/luffy.jpg" alt="user-profile" />
+            <p>Monkey D Luffy</p>
+          </div>
+          <div class="sidebar__info">
+            <img src="/icons/friends.png" alt="user-profile" />
+            <p>Friends</p>
+          </div>
+          <div class="sidebar__info">
+            <img src="/icons/saved.png" alt="user-profile" />
+            <p>Saved</p>
+          </div>
+          <div class="sidebar__info">
+            <img src="/icons/market.png" alt="user-profile" />
+            <p>Marketplace</p>
+          </div>
+          <div class="sidebar__info">
+            <img src="/icons/watch.png" alt="user-profile" />
+            <p>Groups</p>
+          </div>
+          <div class="sidebar__info">
+            <img src="/icons/groups.png" alt="user-profile" />
+            <p>Groups</p>
+          </div>
+          <div class="sidebar__info">
+            <img src="/icons/market.png" alt="user-profile" />
+            <p>See more</p>
+          </div>
+
+          <div class="sidebar__info">
+            <img src="/icons/friends.png" alt="user-profile" />
+            <p>Friends</p>
+          </div>
+          <div class="sidebar__info">
+            <img src="/icons/saved.png" alt="user-profile" />
+            <p>Saved</p>
+          </div>
+          <div class="sidebar__info">
+            <img src="/icons/market.png" alt="user-profile" />
+            <p>Marketplace</p>
+          </div>
+
+          <div class="sidebar__info">
+            <img src="/icons/market.png" alt="user-profile" />
+            <p>See more</p>
+          </div>
+        </div>
+        <footer class="footer">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href=""> Advertising </a>
+          <a href="#">Ad Choices</a>
+          <a href="#">Cookies</a>
+        </footer>
+      </div>
+
+      <section class="section">
+        <div class="section__divider">
+          <div class="story">
+            <div class="story__user">
+              <img
+                src="https://media.allure.com/photos/625449a82c7474034bf4b5f8/1:1/w_2000,h_2000,c_limit/blackpink%20jennie%20kim.jpg"
+                alt=""
+              />
+            </div>
+            <div class="story__create-stories">
+              <div class="story__plus">
+                <img src="/icons/plus.png" alt="" />
+              </div>
+              <p>Create Story</p>
+            </div>
+          </div>
+          <div class="story2">
+            <img src="/icons/changyoung.jpg" alt="" class="story2__user-name" />
+
+            <div class="story2__user-online">
+              <img src="/icons/changyoung.jpg" alt="" />
+              <p>Changyoung</p>
+            </div>
+          </div>
+          <div class="story2">
+            <img src="/icons/nayeon.jpg" alt="" class="story2__user-name" />
+
+            <div class="story2__user-online">
+              <img src="/icons/nayeon.jpg" alt="" />
+              <p>Nayeon</p>
+            </div>
+          </div>
+          <div class="story2">
+            <img src="/icons/sana.jpg" alt="" class="story2__user-name" />
+
+            <div class="story2__user-online">
+              <img src="/icons/sana.jpg" alt="" />
+              <p>Mina</p>
+            </div>
+          </div>
+          <div class="story2">
+            <img src="/icons/nayeon.jpg" alt="" class="story2__user-name" />
+
+            <div class="story2__user-online">
+              <img src="/icons/nayeon.jpg" alt="" />
+              <p>Nayeon</p>
+            </div>
+          </div>
+          <div class="story2">
+            <img src="/icons/momo.jpg" alt="" class="story2__user-name" />
+
+            <div class="story2__user-online">
+              <img src="/icons/momo.jpg" alt="" />
+              <p>Momo</p>
+            </div>
+          </div>
+          <div class="story2">
+            <img src="/icons/jenniekim.jpg" alt="" class="story2__user-name" />
+
+            <div class="story2__user-online">
+              <img src="/icons/jenniekim.jpg" alt="" />
+              <p>Jennie</p>
+            </div>
+          </div>
+          <div class="story2">
+            <img src="/icons/changyoung.jpg" alt="" class="story2__user-name" />
+
+            <div class="story2__user-online">
+              <img src="/icons/changyoung.jpg" alt="" />
+              <p>Changyoung</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="status">
+          <div class="status__update">
+            <img src="/icons/nayeon.jpg" alt="" />
+            <input type="test" placeholder="" />
+          </div>
+          <div class="status__post">
+            <div class="status__post-update">
+              <img src="/icons/user-add.png" alt="" />
+            </div>
+            <div class="status__post-update">
+              <img src="/icons/camera.png" alt="" />
+            </div>
+            <div class="status__post-update">
+              <img src="/icons/picture.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="users">
+          <div class="users__room">
+            <img src="/icons/camera.png" alt="" />
+            <p>Create room</p>
+          </div>
+
+          <img src="/icons/changyoung.jpg" alt="" class="users__img" />
+          <img src="/icons/jenniekim.jpg" alt="" class="users__img" />
+          <img src="/icons/momo.jpg" alt="" class="users__img" />
+          <img src="/icons/nayeon.jpg" alt="" class="users__img" />
+          <img src="/icons/sana.jpg" alt="" class="users__img" />
+          <img src="/icons/changyoung.jpg" alt="" class="users__img" />
+          <img src="/icons/jenniekim.jpg" alt="" class="users__img" />
+          <img src="/icons/sana.jpg" alt="" class="users__img" />
+          <img src="/icons/changyoung.jpg" alt="" class="users__img" />
+          <img src="/icons/jenniekim.jpg" alt="" class="users__img" />
+        </div>
+
+        <div class="feed">
+          <div class="feed__shared">
+            <div class="feed__user-img">
+              <img src="/icons/momo.jpg" alt="" />
+              <div class="feed__user-info">
+                <header class="feed__user-info--header">Momo Sato</header>
+                <p class="feed__user-info--paragraph">1h : ago</p>
+              </div>
+
+              <!-- <img class="feed__optio" src="/icons/momo.jpg" alt="" /> -->
+            </div>
+
+            <div class="feed__caption">
+              <p>
+                The tvN K-drama, which also airs on Netflix, is taking a short
+                break from airing regular episodes for a reason.
+              </p>
+
+              <div class="feed__caption--reaction">
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FF6680'/%3e%3cstop offset='100%25' stop-color='%23E61739'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 100 16A8 8 0 008 0z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41'/%3e%3c/g%3e%3c/svg%3e"
+                  alt=""
+                />
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FF6680'/%3e%3cstop offset='100%25' stop-color='%23E61739'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 100 16A8 8 0 008 0z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41'/%3e%3c/g%3e%3c/svg%3e"
+                  alt=""
+                />
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%2318AFFF'/%3e%3cstop offset='100%25' stop-color='%230062DF'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0 0 0 0 0 0.299356041 0 0 0 0 0.681187726 0 0 0 0.3495684 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 00-8 8 8 8 0 1016 0 8 8 0 00-8-8z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M12.162 7.338c.176.123.338.245.338.674 0 .43-.229.604-.474.725a.73.73 0 01.089.546c-.077.344-.392.611-.672.69.121.194.159.385.015.62-.185.295-.346.407-1.058.407H7.5c-.988 0-1.5-.546-1.5-1V7.665c0-1.23 1.467-2.275 1.467-3.13L7.361 3.47c-.005-.065.008-.224.058-.27.08-.079.301-.2.635-.2.218 0 .363.041.534.123.581.277.732.978.732 1.542 0 .271-.414 1.083-.47 1.364 0 0 .867-.192 1.879-.199 1.061-.006 1.749.19 1.749.842 0 .261-.219.523-.316.666zM3.6 7h.8a.6.6 0 01.6.6v3.8a.6.6 0 01-.6.6h-.8a.6.6 0 01-.6-.6V7.6a.6.6 0 01.6-.6z'/%3e%3c/g%3e%3c/svg%3e"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="feed__react">
+              <div class="feed__react--like">
+                <img src="/icons/friends.png" alt="" />
+              </div>
+              <div class="feed__react--like">
+                <img src="/icons/market.png" alt="" />
+              </div>
+              <div class="feed__react--like">
+                <img src="/icons/saved.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="feed__shared">
+            <div class="feed__user-img">
+              <img src="/icons/jenniekim.jpg" alt="" />
+              <div class="feed__user-info">
+                <header class="feed__user-info--header">Jennie kim</header>
+                <p class="feed__user-info--paragraph">1h : ago</p>
+              </div>
+
+              <!-- <img class="feed__optio" src="/icons/momo.jpg" alt="" /> -->
+            </div>
+
+            <div class="feed__caption">
+              <p>
+                Senator Nancy Binay shares a statement of support to the Cebu
+                Carmelite Sisters as the nuns slammed the depiction of them
+                playing mahjong in the film ‘Maid in Malacañang.’
+              </p>
+
+              <div class="feed__caption--reaction">
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FF6680'/%3e%3cstop offset='100%25' stop-color='%23E61739'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 100 16A8 8 0 008 0z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41'/%3e%3c/g%3e%3c/svg%3e"
+                  alt=""
+                />
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FF6680'/%3e%3cstop offset='100%25' stop-color='%23E61739'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 100 16A8 8 0 008 0z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41'/%3e%3c/g%3e%3c/svg%3e"
+                  alt=""
+                />
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%2318AFFF'/%3e%3cstop offset='100%25' stop-color='%230062DF'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0 0 0 0 0 0.299356041 0 0 0 0 0.681187726 0 0 0 0.3495684 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 00-8 8 8 8 0 1016 0 8 8 0 00-8-8z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M12.162 7.338c.176.123.338.245.338.674 0 .43-.229.604-.474.725a.73.73 0 01.089.546c-.077.344-.392.611-.672.69.121.194.159.385.015.62-.185.295-.346.407-1.058.407H7.5c-.988 0-1.5-.546-1.5-1V7.665c0-1.23 1.467-2.275 1.467-3.13L7.361 3.47c-.005-.065.008-.224.058-.27.08-.079.301-.2.635-.2.218 0 .363.041.534.123.581.277.732.978.732 1.542 0 .271-.414 1.083-.47 1.364 0 0 .867-.192 1.879-.199 1.061-.006 1.749.19 1.749.842 0 .261-.219.523-.316.666zM3.6 7h.8a.6.6 0 01.6.6v3.8a.6.6 0 01-.6.6h-.8a.6.6 0 01-.6-.6V7.6a.6.6 0 01.6-.6z'/%3e%3c/g%3e%3c/svg%3e"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="feed__react">
+              <div class="feed__react--like">
+                <img src="/icons/friends.png" alt="" />
+              </div>
+              <div class="feed__react--like">
+                <img src="/icons/market.png" alt="" />
+              </div>
+              <div class="feed__react--like">
+                <img src="/icons/saved.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feed">
+          <div class="feed__shared">
+            <div class="feed__user-img">
+              <img src="/icons/momo.jpg" alt="" />
+              <div class="feed__user-info">
+                <header class="feed__user-info--header">Momo Sato</header>
+                <p class="feed__user-info--paragraph">1h : ago</p>
+              </div>
+
+              <!-- <img class="feed__optio" src="/icons/momo.jpg" alt="" /> -->
+            </div>
+
+            <div class="feed__caption">
+              <p>
+                The tvN K-drama, which also airs on Netflix, is taking a short
+                break from airing regular episodes for a reason.
+              </p>
+
+              <div class="feed__caption--reaction">
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FF6680'/%3e%3cstop offset='100%25' stop-color='%23E61739'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 100 16A8 8 0 008 0z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41'/%3e%3c/g%3e%3c/svg%3e"
+                  alt=""
+                />
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FF6680'/%3e%3cstop offset='100%25' stop-color='%23E61739'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 100 16A8 8 0 008 0z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41'/%3e%3c/g%3e%3c/svg%3e"
+                  alt=""
+                />
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%2318AFFF'/%3e%3cstop offset='100%25' stop-color='%230062DF'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0 0 0 0 0 0.299356041 0 0 0 0 0.681187726 0 0 0 0.3495684 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 00-8 8 8 8 0 1016 0 8 8 0 00-8-8z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M12.162 7.338c.176.123.338.245.338.674 0 .43-.229.604-.474.725a.73.73 0 01.089.546c-.077.344-.392.611-.672.69.121.194.159.385.015.62-.185.295-.346.407-1.058.407H7.5c-.988 0-1.5-.546-1.5-1V7.665c0-1.23 1.467-2.275 1.467-3.13L7.361 3.47c-.005-.065.008-.224.058-.27.08-.079.301-.2.635-.2.218 0 .363.041.534.123.581.277.732.978.732 1.542 0 .271-.414 1.083-.47 1.364 0 0 .867-.192 1.879-.199 1.061-.006 1.749.19 1.749.842 0 .261-.219.523-.316.666zM3.6 7h.8a.6.6 0 01.6.6v3.8a.6.6 0 01-.6.6h-.8a.6.6 0 01-.6-.6V7.6a.6.6 0 01.6-.6z'/%3e%3c/g%3e%3c/svg%3e"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="feed__react">
+              <div class="feed__react--like">
+                <img src="/icons/friends.png" alt="" />
+              </div>
+              <div class="feed__react--like">
+                <img src="/icons/market.png" alt="" />
+              </div>
+              <div class="feed__react--like">
+                <img src="/icons/saved.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="feed__shared">
+            <div class="feed__user-img">
+              <img src="/icons/jenniekim.jpg" alt="" />
+              <div class="feed__user-info">
+                <header class="feed__user-info--header">Jennie kim</header>
+                <p class="feed__user-info--paragraph">1h : ago</p>
+              </div>
+
+              <!-- <img class="feed__optio" src="/icons/momo.jpg" alt="" /> -->
+            </div>
+
+            <div class="feed__caption">
+              <p>
+                Senator Nancy Binay shares a statement of support to the Cebu
+                Carmelite Sisters as the nuns slammed the depiction of them
+                playing mahjong in the film ‘Maid in Malacañang.’
+              </p>
+
+              <div class="feed__caption--reaction">
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FF6680'/%3e%3cstop offset='100%25' stop-color='%23E61739'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 100 16A8 8 0 008 0z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41'/%3e%3c/g%3e%3c/svg%3e"
+                  alt=""
+                />
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FF6680'/%3e%3cstop offset='100%25' stop-color='%23E61739'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0.710144928 0 0 0 0 0 0 0 0 0 0.117780134 0 0 0 0.349786932 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 100 16A8 8 0 008 0z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M10.473 4C8.275 4 8 5.824 8 5.824S7.726 4 5.528 4c-2.114 0-2.73 2.222-2.472 3.41C3.736 10.55 8 12.75 8 12.75s4.265-2.2 4.945-5.34c.257-1.188-.36-3.41-2.472-3.41'/%3e%3c/g%3e%3c/svg%3e"
+                  alt=""
+                />
+                <img
+                  src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%2318AFFF'/%3e%3cstop offset='100%25' stop-color='%230062DF'/%3e%3c/linearGradient%3e%3cfilter id='c' width='118.8%25' height='118.8%25' x='-9.4%25' y='-9.4%25' filterUnits='objectBoundingBox'%3e%3cfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3e%3cfeOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3e%3cfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3e%3cfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0 0 0 0 0 0.299356041 0 0 0 0 0.681187726 0 0 0 0.3495684 0'/%3e%3c/filter%3e%3cpath id='b' d='M8 0a8 8 0 00-8 8 8 8 0 1016 0 8 8 0 00-8-8z'/%3e%3c/defs%3e%3cg fill='none'%3e%3cuse fill='url(%23a)' xlink:href='%23b'/%3e%3cuse fill='black' filter='url(%23c)' xlink:href='%23b'/%3e%3cpath fill='white' d='M12.162 7.338c.176.123.338.245.338.674 0 .43-.229.604-.474.725a.73.73 0 01.089.546c-.077.344-.392.611-.672.69.121.194.159.385.015.62-.185.295-.346.407-1.058.407H7.5c-.988 0-1.5-.546-1.5-1V7.665c0-1.23 1.467-2.275 1.467-3.13L7.361 3.47c-.005-.065.008-.224.058-.27.08-.079.301-.2.635-.2.218 0 .363.041.534.123.581.277.732.978.732 1.542 0 .271-.414 1.083-.47 1.364 0 0 .867-.192 1.879-.199 1.061-.006 1.749.19 1.749.842 0 .261-.219.523-.316.666zM3.6 7h.8a.6.6 0 01.6.6v3.8a.6.6 0 01-.6.6h-.8a.6.6 0 01-.6-.6V7.6a.6.6 0 01.6-.6z'/%3e%3c/g%3e%3c/svg%3e"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="feed__react">
+              <div class="feed__react--like">
+                <img src="/icons/friends.png" alt="" />
+              </div>
+              <div class="feed__react--like">
+                <img src="/icons/market.png" alt="" />
+              </div>
+              <div class="feed__react--like">
+                <img src="/icons/saved.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="suggestion">
+        <header class="suggestion__header">Your Pages and Profiles</header>
+        <div class="suggestion__notification">
+          <div class="suggestion__notification--img">
+            <img src="icons/bluecoreicon.jpg" alt="" />
+          </div>
+
+          <p>BLUE CORE internet Cafe</p>
+        </div>
+        <div class="suggestion__adds">
+          <img src="/icons/bell.png" alt="" />
+          <p>2 &nbsp; &nbsp;Notification</p>
+        </div>
+        <div class="suggestion__adds">
+          <img src="/icons/picture.png" alt="" />
+
+          <p>2 &nbsp;&nbsp;&nbsp; Notification</p>
+        </div>
+        <div class="suggestion__bar"></div>
+        <header class="suggestion__header">Birthdays</header>
+        <div class="suggestion__notification">
+          <div class="suggestion__notification--img">
+            <img src="icons/gift.png" alt="" />
+          </div>
+          <p>Alfredo Jay's birthday is today.</p>
+        </div>
+        <div class="suggestion__notification">
+          <div class="suggestion__notification--img">
+            <img src="icons/gift.png" alt="" />
+          </div>
+          <p>Admirall bulldog's birthday is today.</p>
+        </div>
+        <div class="suggestion__notification">
+          <div class="suggestion__notification--img">
+            <img src="icons/gift.png" alt="" />
+          </div>
+          <p>Jennie Kim's birthday is today.</p>
+        </div>
+        <div class="suggestion__bar"></div>
+
+        <div class="suggestion__contacts">
+          <header class="suggestion__header">Contacts</header>
+          <div class="suggestion__contacts--icons">
+            <div class="suggestion__contacts--icons-div">
+              <img src="/icons/bell.png" alt="" />
+            </div>
+            <div class="suggestion__contacts--icons-div">
+              <img src="/icons/camera.png" alt="" />
+            </div>
+            <div class="suggestion__contacts--icons-div">
+              <img src="/icons/play-alt.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="suggestion__active-user">
+          <div class="suggestion__active-user-profile">
+            <img src="/icons/changyoung.jpg" alt="" />
+          </div>
+          <p class="suggestion__active-user-name">Changyoung Kim</p>
+        </div>
+        <div class="suggestion__active-user">
+          <div class="suggestion__active-user-profile">
+            <img src="/icons/jenniekim.jpg" alt="" />
+          </div>
+          <p class="suggestion__active-user-name">Jennie Kim</p>
+        </div>
+        <div class="suggestion__active-user">
+          <div class="suggestion__active-user-profile">
+            <img src="/icons/momo.jpg" alt="" />
+          </div>
+          <p class="suggestion__active-user-name">Momo Land</p>
+        </div>
+        <div class="suggestion__active-user">
+          <div class="suggestion__active-user-profile">
+            <img src="/icons/nayeon.jpg" alt="" />
+          </div>
+          <p class="suggestion__active-user-name">Nayeon Yin</p>
+        </div>
+        <div class="suggestion__active-user">
+          <div class="suggestion__active-user-profile">
+            <img src="/icons/changyoung.jpg" alt="" />
+          </div>
+          <p class="suggestion__active-user-name">Changyoung Kim</p>
+        </div>
+        <div class="suggestion__active-user">
+          <div class="suggestion__active-user-profile">
+            <img src="/icons/jenniekim.jpg" alt="" />
+          </div>
+          <p class="suggestion__active-user-name">Jennie Kim</p>
+        </div>
+        <div class="suggestion__active-user">
+          <div class="suggestion__active-user-profile">
+            <img src="/icons/momo.jpg" alt="" />
+          </div>
+          <p class="suggestion__active-user-name">Momo Land</p>
+        </div>
+        <div class="suggestion__active-user">
+          <div class="suggestion__active-user-profile">
+            <img src="/icons/nayeon.jpg" alt="" />
+          </div>
+          <p class="suggestion__active-user-name">Nayeon Yin</p>
+        </div>
+        <div class="suggestion__active-user">
+          <div class="suggestion__active-user-profile">
+            <img src="/icons/changyoung.jpg" alt="" />
+          </div>
+          <p class="suggestion__active-user-name">Changyoung Kim</p>
+        </div>
+        <div class="suggestion__active-user">
+          <div class="suggestion__active-user-profile">
+            <img src="/icons/jenniekim.jpg" alt="" />
+          </div>
+          <p class="suggestion__active-user-name">Jennie Kim</p>
+        </div>
+        <div class="suggestion__active-user">
+          <div class="suggestion__active-user-profile">
+            <img src="/icons/momo.jpg" alt="" />
+          </div>
+          <p class="suggestion__active-user-name">Momo Land</p>
+        </div>
+        <div class="suggestion__active-user">
+          <div class="suggestion__active-user-profile">
+            <img src="/icons/nayeon.jpg" alt="" />
+          </div>
+          <p class="suggestion__active-user-name">Nayeon Yin</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
